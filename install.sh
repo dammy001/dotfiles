@@ -1,17 +1,31 @@
+#!/usr/bin/env bash
+
 # Check for Homebrew, Install if we don't have it
 if test ! $(which brew); then
+    echo '================================================================================'
+    echo 'Installing homebrew...'
   echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    echo 'Done installing homebrew.'
+    echo '================================================================================'
 fi
 
 # Update homebrew recipes
-brew update
+echo '================================================================================'
+echo 'Installing, updating, and cleaning up brew dependencies...'
+brew bundle --global
+brew bundle cleanup --force --global
+brew services cleanup
+sudo brew services cleanup
+brew cleanup -s
 
 # make directory in case they aren't already there
 mkdir -p "/usr/local/lib"
 mkdir -p "/usr/local/bin"
 
 # Install and use latest bash
+echo '================================================================================'
+echo 'Installing bash'
 brew install bash
 chsh -s /usr/local/bin/bash
 
