@@ -37,18 +37,27 @@ alias lintf="nr lint --fix"
 # git shortcuts
 alias gs="git status"
 alias ga="git add -A ."
-alias gc="git commit"
+alias gc="git commit -m"
+alias gcm='git commit'
+alias gfrb='git fetch origin && git rebase origin/master'
 alias gb="git branch"
 alias gd="git diff"
 alias gco="git checkout"
+alias gcob='git checkout -b'
 alias gp="git push"
 alias gl="git pull"
-alias gt="git tag"
 alias gm="git merge"
 alias gg="git log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
 alias ggr="git log --reverse --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
 alias gcp="git cherry-pick"
 alias gcpc="git cherry-pick --continue"
 alias gcpa="git cherry-pick --abort"
-alias gbg="git bisect good"
-alias gbb="git bisect bad"
+alias gpft='git push --follow-tags'
+alias gpl='git pull --rebase'
+alias grb='git rebase'
+alias grbom='git rebase origin/master'
+alias grbc='git rebase --continue'
+
+# npm shortcuts that only list top-level modules
+alias l="yarn list --depth=0 2>/dev/null"
+alias lg="npm list -g --depth=0 2>/dev/null"

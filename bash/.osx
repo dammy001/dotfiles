@@ -3,6 +3,8 @@
 # Configs for development machine
 echo 'OSX profile loaded.'
 
+BREW_PREFIX=$(brew --prefix)
+
 # set default editor
 export EDITOR='code'
 export VISUAL="$EDITOR"
@@ -18,6 +20,16 @@ alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
 
 # recursively delete node_modules
 alias dnodemodules="find . -name "node_modules" -exec rm -rf '{}' +"
+
+# Zsh syntax highlighting
+# https://github.com/zsh-users/zsh-syntax-highlighting
+source "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# Brew autocompletions
+# https://docs.brew.sh/Shell-Completion
+export FPATH="${BREW_PREFIX}/share/zsh/site-functions:${FPATH}"
+autoload -Uz compinit
+compinit
 
 # mkdir + cd
 function take() {

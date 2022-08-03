@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/env bash
 
 # Check for Homebrew, Install if we don't have it
 if test ! $(which brew); then
@@ -131,6 +131,34 @@ apps=(
 echo "installing apps..."
 brew cask install --appdir="/Applications" ${apps[@]}
 
+echo '================================================================================'
+echo 'Installing and updating composer dependencies...'
+composer global update
+valet install
+echo 'Done installing and updating composer dependencies.'
+echo '================================================================================'
+
+echo '================================================================================'
+echo 'Installing and updating pecl dependencies...'
+pecl update-channels
+# For whatever reason, brew is symlinking to the following directory, but it doesn't exist
+# and extensions can't be installed. This should resolve that.
+mkdir /usr/local/lib/php/pecl -p
+
+# pecl upgrade will also install if it isn't yet installed, where as pecl
+# install will fail if it is installed.
+pecl upgrade pcov
+echo 'Done installing and updating pecl dependencies.'
+echo '================================================================================'
+
+# install terminal theme
+echo '================================================================================'
+echo 'Installing and updating terminal theme...'
+curl --create-dirs -fLo $HOME/.config/kitty/dracula.conf https://raw.githubusercontent.com/dracula/kitty/master/dracula.conf
+echo 'Done installing and updating terminal theme.'
+echo '================================================================================'
+
+
 # clone this repo
 git clone https://github.com/dammy001/dotfiles ~/.dotfiles
 
@@ -142,3 +170,5 @@ mkdir ~/Damilare
 # Source dot files
 echo '. ~/.dotfiles/bash/.profile' >> ~/.profile
 source ~/.profile
+
+echo 'Done!'

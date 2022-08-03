@@ -10,7 +10,6 @@ if [[ ! "$SSH_TTY" && "$OSTYPE" =~ ^darwin ]]; then
 	. "$BASH_SRC_PATH"/.osx
 fi
 
-
 # edit this folder
 alias dot="cd ~/.dotfiles"
 
