@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Configs for development machine
+echo 'OSX profile loaded.'
+
+# set default editor
+export EDITOR='code'
+export VISUAL="$EDITOR"
+
+# Use Dracula for the syntax highlighting theme
+export BAT_THEME="Dracula"
+
+alias p="cd ~/Personal"
+alias d="cd ~/Damilare"
+
+# recursively delete .DS_Store
+alias dsstore="find . -name '*.DS_Store' -type f -ls -delete"
+
+# recursively delete node_modules
+alias dnodemodules="find . -name "node_modules" -exec rm -rf '{}' +"
+
+# mkdir + cd
+function take() {
+  mkdir -p $@ && cd ${@:$#}
+}

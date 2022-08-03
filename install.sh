@@ -130,3 +130,15 @@ apps=(
 # Default is: /Users/$user/Applications
 echo "installing apps..."
 brew cask install --appdir="/Applications" ${apps[@]}
+
+# clone this repo
+git clone https://github.com/dammy001/dotfiles ~/.dotfiles
+
+# Make some commonly used folders
+mkdir ~/Personal
+mkdir ~/Work
+mkdir ~/Damilare
+
+# Source dot files
+echo '. ~/.dotfiles/bash/.profile' >> ~/.profile
+source ~/.profile

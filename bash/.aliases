@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# directory navigation
+alias ..="cd .."
+alias ...="cd ../.."
+
+# make aliases sudo-able
+alias sudo="sudo "
+
+# some ls aliases
+alias la="ls -A"
+alias ll="ls -Al"
+
+# laravel and composer script shortcuts
+alias ":q"="exit"
+alias a="php artisan"
+alias c="composer"
+alias dcomposed="docker-compose down"
+alias dcomposeu="docker-compose up -d"
+alias lserve="echo 'The served URL has been opened in the background...';open -g http://127.0.0.1:8000; if [[ -f ./artisan ]]; then php artisan serve; else php -S 127.0.0.1:8000; fi"
+
+# npm script shortcuts
+alias i="ni"
+alias t="nr test"
+alias tw="nr test --watch"
+alias b="nr build"
+alias start="nr start"
+alias d="nr dev"
+alias dd="nr debug"
+alias s="nr serve"
+alias c="nr typecheck"
+alias lint="nr lint"
+alias vr="vitest run"
+alias release="nr release"
+alias lintf="nr lint --fix"
+
+# git shortcuts
+alias gs="git status"
+alias ga="git add -A ."
+alias gc="git commit"
+alias gb="git branch"
+alias gd="git diff"
+alias gco="git checkout"
+alias gp="git push"
+alias gl="git pull"
+alias gt="git tag"
+alias gm="git merge"
+alias gg="git log --graph --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
+alias ggr="git log --reverse --pretty=format:'%C(bold red)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset %C(yellow)%ad%Creset' --abbrev-commit --date=short"
+alias gcp="git cherry-pick"
+alias gcpc="git cherry-pick --continue"
+alias gcpa="git cherry-pick --abort"
+alias gbg="git bisect good"
+alias gbb="git bisect bad"
