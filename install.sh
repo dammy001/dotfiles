@@ -105,32 +105,6 @@ foundations=(
 echo "installing foundations..."
 brew ${foundations[@]}
 
-# Apps
-apps=(
-  google-chrome
-  firefox
-  iterm2
-  sublime-text3
-  docker
-  postman
-  tableplus
-  fig
-  zoom
-  phpstorm
-  goland
-  raycast
-  DBngin
-  phpmon
-  linear
-  skype
-  imageoptim
-)
-
-# Install apps to /Applications
-# Default is: /Users/$user/Applications
-echo "installing apps..."
-brew cask install --appdir="/Applications" ${apps[@]}
-
 echo '================================================================================'
 echo 'Installing and updating composer dependencies...'
 composer global update
@@ -158,6 +132,31 @@ curl --create-dirs -fLo $HOME/.config/kitty/dracula.conf https://raw.githubuserc
 echo 'Done installing and updating terminal theme.'
 echo '================================================================================'
 
+# Apps
+apps=(
+  google-chrome
+  firefox
+  iterm2
+  sublime-text3
+  docker
+  postman
+  tableplus
+  fig
+  zoom
+  phpstorm
+  goland
+  raycast
+  DBngin
+  phpmon
+  linear
+  skype
+  imageoptim
+)
+
+# Install apps to /Applications
+# Default is: /Users/$user/Applications
+echo "installing apps..."
+brew cask install --appdir="/Applications" ${apps[@]}
 
 # clone this repo
 git clone https://github.com/dammy001/dotfiles ~/.dotfiles
