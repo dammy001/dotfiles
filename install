@@ -64,7 +64,10 @@ npm install -g ${modules[@]}
 echo "Installing brew cask..."
 brew install caskroom/cask/brew-cask
 
-tap 'homebrew/services'
+brew tap 'homebrew/cask'
+brew tap 'homebrew/cask-drivers'
+brew tap 'homebrew/cask-versions'
+brew tap 'homebrew/services'
 
 # php monitor
 brew tap 'nicoverbruggen/homebrew-cask'
@@ -72,38 +75,36 @@ brew tap 'nicoverbruggen/homebrew-cask'
 # dependencies
 brew 'pkg-config'
 
-# foundation
-foundations=(
-    composer
-    dnsmasq
-    redis
-    rabbitmq
-    watchman
-    mysql
-    php@8.1
-    php@8.0
-    php@7.4
-    yarn
-    pnpm
-    node
-    sqlite
-    nginx
-    mongodb-community
-    grep
-    vim
-    zsh
-    zsh-async
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    sonarqube
-    gnupg
-    coreutils
-    beanstalkd
-)
-
 # Install foudations
+echo '================================================================================'
 echo "installing foundations..."
-brew install ${foundations[@]}
+brew 'composer'
+brew 'dnsmasq'
+brew 'redis'
+brew 'rabbitmq'
+brew 'watchman'
+brew 'mysql'
+brew 'php@8.1'
+brew 'php@8.0'
+brew 'php@7.4'
+brew 'yarn'
+brew 'node'
+brew 'pnpm'
+brew 'sqlite'
+brew 'nginx'
+brew 'mongodb-community'
+brew 'grep'
+brew 'vim'
+brew 'zsh'
+brew 'zsh-async'
+brew 'zsh-autosuggestions'
+brew 'zsh-syntax-highlighting'
+brew 'sonarqube'
+brew 'gnupg'
+brew 'coreutils'
+brew 'beanstalkd'
+echo '================================================================================'
+echo "Done installing foundations..."
 
 echo '================================================================================'
 echo 'Installing and updating composer dependencies...'
@@ -137,7 +138,6 @@ apps=(
   google-chrome
   firefox
   iterm2
-  sublime-text3
   docker
   postman
   tableplus
