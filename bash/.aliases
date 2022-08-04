@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash/env
 
 # directory navigation
 alias ..="cd .."
