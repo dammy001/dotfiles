@@ -24,6 +24,7 @@ mkdir -p "/usr/local/lib"
 mkdir -p "/usr/local/bin"
 
 # Install and use latest bash
+if test ! $(which bash)
 echo '================================================================================'
 echo 'Installing bash'
 brew install bash
@@ -34,7 +35,7 @@ brew install git
 
 # Install nvm
 echo "Installing nvm..."
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+/bin/bash -c "$(curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh)"
 nvm install stable
 nvm alias default stable
 
@@ -90,6 +91,8 @@ echo "Done installing foundations..."
 echo '================================================================================'
 echo 'Installing and updating composer dependencies...'
 composer global update
+composer global require laravel/valet
+
 valet install
 echo 'Done installing and updating composer dependencies.'
 echo '================================================================================'
@@ -113,6 +116,26 @@ echo 'Installing and updating terminal theme...'
 curl --create-dirs -fLo $HOME/.config/kitty/dracula.conf https://raw.githubusercontent.com/dracula/kitty/master/dracula.conf
 echo 'Done installing and updating terminal theme.'
 echo '================================================================================'
+
+# Install Node modules
+modules=(
+  nr
+  n
+  lerna
+  @nestjs/cli
+  nodemon
+  typescript
+  gulp
+  @vue/cli
+  firebase-tools
+  anywhere
+  webpack
+  vite
+)
+
+echo "installing node modules..."
+npm install -g ${modules[@]}
+
 
 # Apps
 # apps=(
