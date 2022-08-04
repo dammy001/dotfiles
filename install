@@ -85,6 +85,8 @@ brew install 'sonarqube'
 brew install 'gnupg'
 brew install 'coreutils'
 brew install 'beanstalkd'
+brew install 'python3'
+brew install 'go'
 echo '================================================================================'
 echo "Done installing foundations..."
 
