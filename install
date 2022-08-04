@@ -103,7 +103,7 @@ foundations=(
 
 # Install foudations
 echo "installing foundations..."
-brew ${foundations[@]}
+brew install ${foundations[@]}
 
 echo '================================================================================'
 echo 'Installing and updating composer dependencies...'
@@ -156,7 +156,7 @@ apps=(
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
 echo "installing apps..."
-brew cask install --appdir="/Applications" ${apps[@]}
+brew install --cask --appdir="/Applications" ${apps[@]}
 
 # clone this repo
 git clone https://github.com/dammy001/dotfiles ~/.dotfiles
