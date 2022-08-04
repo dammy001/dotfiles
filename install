@@ -41,25 +41,6 @@ nvm alias default stable
 # Centralize global npm packages for different node versions
 echo "prefix = /usr/local" > ~/.npmrc
 
-# Install Node modules
-modules=(
-  nr
-  n
-  lerna
-  @nestjs/cli
-  nodemon
-  typescript
-  gulp
-  @vue/cli
-  firebase-tools
-  anywhere
-  webpack
-  vite
-)
-
-echo "installing node modules..."
-npm install -g ${modules[@]}
-
 # Install Brew Cask
 echo "Installing brew cask..."
 brew install caskroom/cask/brew-cask
@@ -73,36 +54,36 @@ brew tap 'homebrew/services'
 brew tap 'nicoverbruggen/homebrew-cask'
 
 # dependencies
-brew 'pkg-config'
+brew install 'pkg-config'
 
 # Install foudations
 echo '================================================================================'
 echo "installing foundations..."
-brew 'composer'
-brew 'dnsmasq'
-brew 'redis'
-brew 'rabbitmq'
-brew 'watchman'
-brew 'mysql'
-brew 'php@8.1'
-brew 'php@8.0'
-brew 'php@7.4'
-brew 'yarn'
-brew 'node'
-brew 'pnpm'
-brew 'sqlite'
-brew 'nginx'
-brew 'mongodb-community'
-brew 'grep'
-brew 'vim'
-brew 'zsh'
-brew 'zsh-async'
-brew 'zsh-autosuggestions'
-brew 'zsh-syntax-highlighting'
-brew 'sonarqube'
-brew 'gnupg'
-brew 'coreutils'
-brew 'beanstalkd'
+brew install 'composer'
+brew install 'dnsmasq'
+brew install 'redis'
+brew install 'rabbitmq'
+brew install 'watchman'
+brew install 'mysql'
+brew install 'php@8.1'
+brew install 'php@8.0'
+brew install 'php@7.4'
+brew install 'yarn'
+brew install 'node'
+brew install 'pnpm'
+brew install 'sqlite'
+brew install 'nginx'
+brew install 'mongodb-community'
+brew install 'grep'
+brew install 'vim'
+brew install 'zsh'
+brew install 'zsh-async'
+brew install 'zsh-autosuggestions'
+brew install 'zsh-syntax-highlighting'
+brew install 'sonarqube'
+brew install 'gnupg'
+brew install 'coreutils'
+brew install 'beanstalkd'
 echo '================================================================================'
 echo "Done installing foundations..."
 
@@ -134,29 +115,41 @@ echo 'Done installing and updating terminal theme.'
 echo '================================================================================'
 
 # Apps
-apps=(
-  google-chrome
-  firefox
-  iterm2
-  docker
-  postman
-  tableplus
-  fig
-  zoom
-  phpstorm
-  goland
-  raycast
-  DBngin
-  phpmon
-  linear
-  skype
-  imageoptim
-)
+# apps=(
+#   # google-chrome
+#   firefox
+#   iterm2
+#   docker
+#   postman
+#   tableplus
+#   fig
+#   zoom
+#   phpstorm
+#   goland
+#   raycast
+#   DBngin
+#   phpmon
+#   linear
+#   skype
+#   imageoptim
+# )
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
 echo "installing apps..."
-brew install --cask --appdir="/Applications" ${apps[@]}
+# brew install --cask --appdir="/Applications" ${apps[@]}
+brew install --cask iterm2 --appdir="/Applications"
+brew install --cask docker --appdir="/Applications"
+brew install --cask postman --appdir="/Applications"
+brew install --cask tableplus --appdir="/Applications"
+brew install --cask zoom --appdir="/Applications"
+brew install --cask phpmon --appdir="/Applications"
+brew install --cask skype --appdir="/Applications"
+brew install --cask imageoptim --appdir="/Applications"
+brew install --cask DBngin --appdir="/Applications"
+brew install --cask linear --appdir="/Applications"
+brew install --cask fig --appdir="/Applications"
+brew install --cask raycast --appdir="/Applications"
 
 # clone this repo
 git clone https://github.com/dammy001/dotfiles ~/.dotfiles
