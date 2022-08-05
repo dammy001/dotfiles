@@ -87,6 +87,8 @@ brew install 'coreutils'
 brew install 'beanstalkd'
 brew install 'python3'
 brew install 'go'
+brew install 'kubectl'
+brew install 'derailed/k9s/k9s'
 echo '================================================================================'
 echo "Done installing foundations..."
 
