@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo 'Cloning repositories...'
+
+SITES=$HOME/Work
+LARAVEL=$SITE/Laravel
+VUE=$SITE/Vue
+
+
+# Laravel
+git clone git@github.com:dammy001/framework.git $LARAVEL/framework

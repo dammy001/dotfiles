@@ -218,6 +218,9 @@ mkdir ~/Personal
 mkdir ~/Work
 mkdir ~/Damilare
 
+# Clone Github repositories
+bash $DOTFILES/clone
+
 # Source dot files
 echo '. ~/.dotfiles/bash/.profile' >> ~/.profile
 source ~/.profile

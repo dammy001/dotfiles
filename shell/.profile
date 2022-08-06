@@ -4,6 +4,9 @@ DOTFILES_PATH=~/.dotfiles
 BASH_SRC_PATH=$DOTFILES_PATH/shell
 
 . "$BASH_SRC_PATH"/.aliases
+. "$BASH_SRC_PATH"/.functions
+. "$BASH_SRC_PATH"/.zshrc
+
 
 # System Specific
 if [[ ! "$SSH_TTY" && "$OSTYPE" =~ ^darwin ]]; then
