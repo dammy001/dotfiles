@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILES_PATH=~/.dotfiles
-BASH_SRC_PATH=$DOTFILES_PATH/bash
+BASH_SRC_PATH=$DOTFILES_PATH/shell
 
 . "$BASH_SRC_PATH"/.aliases
 

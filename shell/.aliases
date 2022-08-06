@@ -15,9 +15,25 @@ alias ll="ls -Al"
 alias ":q"="exit"
 alias a="php artisan"
 alias c="composer"
+alias c="composer"
+alias cu="composer update"
+alias cr="composer require"
+alias ci="composer install"
 alias dcomposed="docker-compose down"
 alias dcomposeu="docker-compose up -d"
 alias lserve="echo 'The served URL has been opened in the background...';open -g http://127.0.0.1:8000; if [[ -f ./artisan ]]; then php artisan serve; else php -S 127.0.0.1:8000; fi"
+alias sail='./vendor/bin/sail'
+alias tp="php artisan test --parallel"
+alias phpunit="vendor/bin/phpunit"
+alias phpunitw="phpunit-watcher watch"
+alias larastan="vendor/bin/phpstan analyse"
+
+# PHP
+alias switch-php80="brew unlink php@7.4 && brew link --overwrite --force php"
+alias switch-php74="brew unlink php && brew link --overwrite --force php@7.4"
+
+# Redis
+alias flush-redis="redis-cli FLUSHALL"
 
 # npm script shortcuts
 alias i="ni"
@@ -33,6 +49,10 @@ alias lint="nr lint"
 alias vr="vitest run"
 alias release="nr release"
 alias lintf="nr lint --fix"
+
+# switch node versions
+alias switch-n-14="sudo n 14"
+alias switch-n-16="sudo n 16"
 
 # git shortcuts
 alias gs="git status"
@@ -61,3 +81,12 @@ alias grbc='git rebase --continue'
 # npm shortcuts that only list top-level modules
 alias l="yarn list --depth=0 2>/dev/null"
 alias lg="npm list -g --depth=0 2>/dev/null"
+
+# PhpStorm
+alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
+
+# Goland
+alias goland='open -a "/Applications/GoLand.app" "`pwd`"'
+
+# VSCode
+alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
