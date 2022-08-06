@@ -25,13 +25,20 @@ mkdir -p "/usr/local/bin"
 
 # Install and use latest bash
 if test ! $(which bash)
-echo '================================================================================'
-echo 'Installing bash'
-brew install bash
-chsh -s /usr/local/bin/bash
+  echo '================================================================================'
+  echo 'Installing bash'
+  brew install bash
+  chsh -s /usr/local/bin/bash
+fi
 
 # Install git
 brew install git
+
+# Install zsh
+echo 'Install oh-my-zsh'
+echo '================================================================================'
+rm -rf $HOME/.oh-my-zsh
+curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 # Install nvm
 echo "Installing nvm..."
@@ -113,6 +120,22 @@ mkdir /usr/local/lib/php/pecl -p
 pecl upgrade pcov
 echo 'Done installing and updating pecl dependencies.'
 echo '================================================================================'
+
+echo 'Install memcached'
+echo '================================================================================'
+pecl install memcached
+
+echo 'Install xdebug'
+echo '================================================================================'
+pecl install xdebug
+
+# start services
+echo 'Starting services...'
+echo '================================================================================'
+brew services start mysql
+brew services start redis
+brew services start sqlite
+brew services start sonarqube
 
 # install terminal theme
 echo '================================================================================'
