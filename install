@@ -40,6 +40,10 @@ echo '==========================================================================
 rm -rf $HOME/.oh-my-zsh
 curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
+# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+rm -rf $HOME/.zshrc
+ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
+
 # Install nvm
 echo "Installing nvm..."
 /bin/bash -c "$(curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh)"
@@ -103,6 +107,7 @@ echo '==========================================================================
 echo 'Installing and updating composer dependencies...'
 composer global update
 composer global require laravel/valet
+composer global require laravel/installer laravel
 
 valet install
 echo 'Done installing and updating composer dependencies.'
@@ -128,6 +133,10 @@ pecl install memcached
 echo 'Install xdebug'
 echo '================================================================================'
 pecl install xdebug
+
+echo 'Install Swoole'
+echo '================================================================================'
+pecl install swoole
 
 # start services
 echo 'Starting services...'
